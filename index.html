@@ -5,83 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoSpider</title>
     <style>
-        /* Базовые стили */
-        body {
+        /* Базовые сбросы, чтобы убрать системные отступы браузера */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: #f4f4f9;
             color: #333;
         }
 
-        /* Темная плашка шапки на всю ширину */
-        header {
-            background-color: #2c3e50;
-            color: #fff;
-            padding: 15px 20px;
+        /* Жестко фиксируем цвет и размеры шапки для обеих страниц */
+        header.custom-header {
+            background-color: #2c3e50 !important;
+            padding: 20px !important;
+            display: block !important;
+            box-sizing: border-box !important;
+            height: auto !important;
         }
 
-        /* Контейнер внутри шапки для ограничения ширины и выравнивания */
+        /* Контейнер внутри шапки */
         .header-container {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between; /* Название слева, ссылки справа */
-            align-items: center; /* Центрирование по вертикали */
-            flex-wrap: wrap; /* Чтобы элементы переносились на мобильных */
+            max-width: 800px !important;
+            margin: 0 auto !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            flex-wrap: wrap !important;
         }
 
+        /* Принудительный единый стиль для названия */
         .header-container h1 {
-            margin: 0;
-            font-size: 2rem;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 2rem !important;
+            color: #ffffff !important;
+            text-transform: none !important; /* Отменяет принудительный капслок, если он был */
+            font-weight: bold !important;
+            background: none !important;
         }
 
-        /* Навигация */
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 1rem;
-            transition: color 0.3s;
+        /* Ссылки */
+        nav.custom-nav {
+            display: block !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
-        nav a:hover {
-            color: #1abc9c;
+        nav.custom-nav a {
+            color: #ffffff !important;
+            text-decoration: none !important;
+            margin-left: 20px !important;
+            font-size: 1rem !important;
+            transition: color 0.3s !important;
+            display: inline-block !important;
+            font-weight: normal !important;
         }
 
-        /* Основной контент сайта */
+        nav.custom-nav a:hover {
+            color: #1abc9c !important;
+        }
+
+        /* Контентная область */
         main {
             max-width: 800px;
             margin: 40px auto;
-            padding: 20px;
+            padding: 30px;
             background-color: #fff;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             border-radius: 8px;
             box-sizing: border-box;
+            line-height: 1.6;
         }
 
-        /* Адаптивность для мобильных устройств (экраны меньше 600px) */
+        /* Адаптивность */
         @media (max-width: 600px) {
             .header-container {
-                flex-direction: column; /* Элементы встают друг под друга */
-                text-align: center;
+                flex-direction: column !important;
+                text-align: center !important;
             }
-
             .header-container h1 {
-                margin-bottom: 10px; /* Отступ между названием и ссылками */
+                margin-bottom: 10px !important;
             }
-
-            nav {
-                margin: 0;
-                padding: 0;
+            nav.custom-nav a {
+                margin: 0 10px !important;
             }
-
-            nav a {
-                margin: 0 10px; /* Одинаковые отступы для ссылок на мобильном */
-            }
-
             main {
-                margin: 20px 10px; /* Меньше отступы по краям экрана */
+                margin: 20px 10px;
+                padding: 20px;
             }
         }
     </style>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoSpider</title>
     <style>
+        /* Базовые стили */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,27 +14,29 @@
             color: #333;
         }
 
-        /* Шапка сайта */
+        /* Темная плашка шапки на всю ширину */
         header {
             background-color: #2c3e50;
             color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative; /* Нужно для позиционирования ссылок */
+            padding: 15px 20px;
         }
 
-        header h1 {
+        /* Контейнер внутри шапки для ограничения ширины и выравнивания */
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between; /* Название слева, ссылки справа */
+            align-items: center; /* Центрирование по вертикали */
+            flex-wrap: wrap; /* Чтобы элементы переносились на мобильных */
+        }
+
+        .header-container h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2rem;
         }
 
-        /* Ссылки перенесены в верхний правый угол */
-        nav {
-            position: absolute;
-            top: 25px;
-            right: 20px;
-        }
-
+        /* Навигация */
         nav a {
             color: #fff;
             text-decoration: none;
@@ -46,7 +49,7 @@
             color: #1abc9c;
         }
 
-        /* Контентная область */
+        /* Основной контент сайта */
         main {
             max-width: 800px;
             margin: 40px auto;
@@ -54,20 +57,31 @@
             background-color: #fff;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             border-radius: 8px;
+            box-sizing: border-box;
         }
 
-        /* Адаптивность для мобильных устройств */
+        /* Адаптивность для мобильных устройств (экраны меньше 600px) */
         @media (max-width: 600px) {
-            header {
-                padding-top: 60px; /* Добавляем место сверху, чтобы ссылки не перекрывали заголовок */
-            }
-            nav {
-                position: static;
+            .header-container {
+                flex-direction: column; /* Элементы встают друг под друга */
                 text-align: center;
-                margin-top: 10px;
             }
+
+            .header-container h1 {
+                margin-bottom: 10px; /* Отступ между названием и ссылками */
+            }
+
+            nav {
+                margin: 0;
+                padding: 0;
+            }
+
             nav a {
-                margin: 0 10px;
+                margin: 0 10px; /* Одинаковые отступы для ссылок на мобильном */
+            }
+
+            main {
+                margin: 20px 10px; /* Меньше отступы по краям экрана */
             }
         }
     </style>
@@ -75,11 +89,13 @@
 <body>
 
     <header>
-        <h1>LoSpider</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-        </nav>
+        <div class="header-container">
+            <h1>LoSpider</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+        </div>
     </header>
 
     <main>

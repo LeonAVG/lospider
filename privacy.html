@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - LoSpider</title>
     <style>
-        /* Сброс всех системных отступов, чтобы ничего не съезжало */
+        /* Сброс всех системных отступов */
         *, *::before, *::after {
             box-sizing: border-box !important;
             margin: 0;
@@ -18,7 +18,7 @@
             color: #333;
         }
 
-        /* Шапка: строго фиксированная высота за счет паддингов и border-box */
+        /* Шапка */
         header.custom-header {
             background-color: #2c3e50 !important;
             padding: 20px !important;
@@ -26,7 +26,6 @@
             width: 100% !important;
         }
 
-        /* Контейнер внутри шапки */
         .header-container {
             max-width: 800px !important;
             margin: 0 auto !important;
@@ -36,18 +35,15 @@
             flex-wrap: wrap !important;
         }
 
-        /* Название проекта */
         .header-container h1 {
             margin: 0 !important;
             padding: 0 !important;
             font-size: 2rem !important;
             color: #ffffff !important;
-            text-transform: none !important;
             font-weight: bold !important;
             line-height: 1 !important;
         }
 
-        /* Навигация */
         nav.custom-nav {
             display: block !important;
         }
@@ -66,10 +62,39 @@
             color: #1abc9c !important;
         }
 
+        /* Мобильный контейнер для выбора языка */
+        .lang-selector-container {
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Стили выпадающего списка языков */
+        .lang-select {
+            padding: 8px 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: #ffffff;
+            border: 2px solid #2c3e50;
+            border-radius: 6px;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .lang-select:hover, .lang-select:focus {
+            background-color: #2c3e50;
+            color: #ffffff;
+        }
+
         /* Область контента (белое поле) */
         main {
             max-width: 800px;
-            margin: 40px auto;
+            margin: 20px auto 40px auto;
             padding: 30px;
             background-color: #fff;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -77,72 +102,7 @@
             line-height: 1.6;
         }
 
-        /* Адаптивность для мобильных */
-        @media (max-width: 600px) {
-            .header-container {
-                flex-direction: column !important;
-                text-align: center !important;
-            }
-            .header-container h1 {
-                margin-bottom: 15px !important;
-            }
-            nav.custom-nav a {
-                margin: 0 10px !important;
-            }
-            main {
-                margin: 20px 10px;
-                padding: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header class="custom-header">
-        <div class="header-container">
-            <h1>LoSpider</h1>
-            <nav class="custom-nav">
-                <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <h2></h2>
-        
-        <!-- ======================================================= -->
-        <!-- ВСТАВЛЯЙТЕ ВАШ HTML КОД ТЕКСТА СЮДА (НАЧАЛО) -->
-        
-        <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Privacy Policy - LoSpider</title>
-    <style>
-        @page {
-            size: A4;
-            margin: 20mm 15mm;
-            background-color: #ffffff;
-            @bottom-right {
-                content: counter(page);
-                font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                font-size: 9pt;
-                color: #888888;
-            }
-        }
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            color: #333333;
-            line-height: 1.5;
-            font-size: 10.5pt;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
+        /* Стили элементов текста политики */
         h1 {
             font-size: 20pt;
             color: #111111;
@@ -159,14 +119,12 @@
             margin-top: 30px;
             margin-bottom: 15px;
             text-transform: uppercase;
-            page-break-after: avoid;
         }
         h3 {
             font-size: 11pt;
             color: #2d3748;
             margin-top: 20px;
             margin-bottom: 10px;
-            page-break-after: avoid;
         }
         p {
             margin-top: 0;
@@ -186,7 +144,6 @@
             border-radius: 4px;
             font-style: italic;
             font-size: 10pt;
-            page-break-inside: avoid;
         }
         .short-box strong {
             font-style: normal;
@@ -206,11 +163,6 @@
             margin-top: 15px;
             margin-bottom: 20px;
             font-size: 9.5pt;
-            page-break-inside: auto;
-        }
-        tr {
-            page-break-inside: avoid;
-            page-break-after: auto;
         }
         th {
             background-color: #2b6cb0;
@@ -267,12 +219,54 @@
             font-family: monospace;
             white-space: pre-line;
         }
+
+        /* Адаптивность для мобильных */
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            .header-container h1 {
+                margin-bottom: 15px !important;
+            }
+            nav.custom-nav a {
+                margin: 0 10px !important;
+            }
+            .lang-selector-container {
+                justify-content: center;
+                padding: 0 10px;
+            }
+            main {
+                margin: 10px 10px 30px 10px;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <h1>PRIVACY POLICY</h1>
-    <div class="subtitle">Last updated June 02, 2026</div>
+    <header class="custom-header">
+        <div class="header-container">
+            <h1>LoSpider</h1>
+            <nav class="custom-nav">
+                <a href="index.html">Home</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="lang-selector-container">
+        <select id="langSelect" class="lang-select" onchange="switchLang(this.value)">
+            <option value="en">English (EN)</option>
+            <option value="zh">简体中文 (ZH)</option>
+        </select>
+    </div>
+
+    <main>
+        
+        <div id="privacy-en">
+            <h1>PRIVACY POLICY</h1>
+            <div class="subtitle">Last updated June 02, 2026 </div>
 
     <p>This Privacy Notice for Yakovlev Pavel Dmitrievich (operating under the trade name LoSpider) ("<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), describes how and why we might access, collect, store, use, and/or share ("<strong>process</strong>") your personal information when you use our services ("<strong>Services</strong>"), including when you:</p>
     <ul>
@@ -669,7 +663,78 @@ Russia</div>
 
     <h2 id="section15">15. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
     <p>Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please fill out and submit a data subject access request.</p>
+</div>
 
+        <div id="privacy-zh" style="display: none;">
+            <h1>隐私政策</h1>
+            <div class="subtitle">最后更新日期：2026年6月2日</div>
+
+            <p><strong>Yakovlev Pavel Dmitrievich</strong>（以商号 <strong>LoSpider</strong> 运营）（以下简称“<strong>我们</strong>”或“<strong>我们的</strong>”），向您说明当您使用我们的服务（以下简称“<strong>服务</strong>”）时，我们为何以及如何访问、收集、存储、使用和/或共享（“<strong>处理</strong>”）您的个人信息，包括当您：</p>
+            <ul>
+                <li>下载并使用我们的移动应用程序（<strong>My Puzzle Alarm Clock</strong>），或链接到本隐私通知 holiday 的任何其他应用程序</li>
+                <li>以其他相关方式与我们互动，包括任何营销活动或事件</li>
+            </ul>
+
+            <p><strong>如有疑问或疑虑？</strong> 阅读本隐私政策将帮助您了解您的隐私权和选择。如果您不同意我们的政策和惯例，请不要使用我们的服务。如果您仍有任何问题或疑虑，请通过发送电子邮件至 <a href="mailto:lospider@proton.me">lospider@proton.me</a> 与我们联系。</p>
+
+            <div class="toc">
+                <h3>要点总结</h3>
+                <p><strong>我们处理哪些个人信息？</strong> 当您访问、使用或浏览我们的服务时，我们可能会根据您与我们及服务的互动、您做出的选择以及您使用的产品和功能来处理个人信息。</p>
+                <p><strong>我们是否处理任何敏感个人信息？</strong> 我们不处理任何敏感个人信息。</p>
+                <p><strong>我们是否从第三方收集信息？</strong> 我们可能会从我们的第三方广告和网络中介合作伙伴处接收有限的技术或广告识别符。</p>
+                <p><strong>我们如何处理您的信息？</strong> 我们处理您的信息是为了提供、改进和管理我们的服务，与您交流，用于安全和欺诈预防，以及遵守法律。我们也可能出于其他目的处理您的信息，但前提是我们有合法的法律依据。</p>
+                <p><strong>在何种情况下以及与哪些各方共享个人信息？</strong> 我们可能会 technical 在特定情况下与特定的第三方共享信息。</p>
+                <p><strong>我们如何确保您的信息安全？</strong> 我们建立了适当的技术和组织安全措施。但任何通过互联网进行的电子传输或信息存储技术都无法保证100%安全。</p>
+            </div>
+
+            <div class="toc">
+                <h3>目录</h3>
+                <ul>
+                    <li>1. 我们收集哪些信息？</li>
+                    <li>2. 我们如何处理您的信息？</li>
+                    <li>3. 我们与谁共享您的个人信息？</li>
+                    <li>4. 如何就本通知与我们联系</li>
+                </ul>
+            </div>
+
+            <h2>1. 我们收集哪些信息？</h2>
+            <h3>您向我们透露的个人信息</h3>
+            <p><strong>简而言之：</strong> 我们收集您直接向我们提供的个人信息。</p>
+            <p><strong>应用数据：</strong> 如果您使用我们的应用程序，在您授权的情况下，我们可能会申请访问移动设备的存储权限及其他必要功能。这主要用于维持应用的正常运行和安全。</p>
+
+            <h3>自动收集的信息</h3>
+            <p><strong>简而言之：</strong> 当您访问我们的服务时，会自动收集某些信息，例如您的IP地址和/或设备特征。</p>
+            <p>当您使用应用时，我们可能会自动收集非特定身份的技术信息（如IP地址、设备名称、操作系统版本、语言偏好等）。<strong>这些信息主要用于维护我们服务的安全与稳定，以及用于广告、商业变现和数据分析。</strong></p>
+
+            <h2>2. 我们如何处理您的信息？</h2>
+            <p>我们处理您的个人信息的目的包括：</p>
+            <ul>
+                <li><strong>向您投放定向广告：</strong> 我们可能会处理您的数据，以开发和展示适合您兴趣、位置等的个性化广告内容。</li>
+                <li><strong>保护我们的服务：</strong> 作为我们保持服务安全稳定工作的一部分，用于防范和监控欺诈与违法行为。</li>
+            </ul>
+
+            <h2>3. 当我们与谁共享您的个人信息？</h2>
+            <p>我们可能会在以下特定情况下共享您的个人数据：</p>
+            <ul>
+                <li><strong>广告和中介合作伙伴（广告网络）：</strong> 我们使用第三方广告和聚合服务来支持和变现我们的App。这些第三方可能会自动收集和处理技术设备标识符（例如华为 <strong>OAID</strong>）、设备配置、性能数据和粗略的位置数据，以投放和优化个性化广告。我们的广告合作伙伴包括：
+                    <ul>
+                        <li>Yandex Advertising Network (Mediation)</li>
+                        <li>AppLovin Corporation</li>
+                        <li>Mintegral (Mobvista)</li>
+                        <li>Bigo Ads</li>
+                        <li>ironSource (Unity)</li>
+                        <li>Start.io (StartApp)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>4. 如何就本通知与我们联系</h2>
+            <p>如果您对本通知有任何疑问或意见，可通过电子邮件 <a href="mailto:lospider@proton.me">lospider@proton.me</a> 与我们联系，或邮寄至：</p>
+            <div class="contact-info">Yakovlev Pavel Dmitrievich
+ul. Pushkina, d. 22
+Samara, Sukhodol 446552
+Russia</div>
+        </div>
 </body>
 </html>
         
@@ -677,11 +742,39 @@ Russia</div>
         <!-- ======================================================= -->
 
     </main>
-<!-- Кнопки ручного переключения в самом верху страницы для подстраховки -->
-<div style="text-align: right; padding: 10px; font-family: sans-serif;">
-    <button id="btn-en" onclick="switchLang('en')" style="font-weight: bold; padding: 5px 10px; margin-right: 5px; cursor: pointer;">English</button>
-    <button id="btn-zh" onclick="switchLang('zh')" style="padding: 5px 10px; cursor: pointer;">简体中文</button>
-</div>
+
+<script>
+        function switchLang(lang) {
+            const enBlock = document.getElementById('privacy-en');
+            const zhBlock = document.getElementById('privacy-zh');
+            const selectEl = document.getElementById('langSelect');
+
+            // Обновляем значение самого селектора (на случай вызова функции из кода)
+            selectEl.value = lang;
+
+            if (lang === 'zh') {
+                enBlock.style.display = 'none';
+                zhBlock.style.display = 'block';
+            } else {
+                enBlock.style.display = 'block';
+                zhBlock.style.display = 'none';
+            }
+        }
+
+        // Автоопределение при первой загрузке страницы
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const userLang = navigator.language || navigator.userLanguage; 
+            
+            // Если язык системы содержит 'zh' (Китай), автоматически показываем китайский текст
+            if (userLang && userLang.toLowerCase().startsWith('zh')) {
+                switchLang('zh');
+            } else {
+                switchLang('en');
+            }
+        });
+    </script>
+</body>
+</html>
     
 </body>
 </html>

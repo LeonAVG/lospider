@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - My Puzzle Alarm Clock</title>
+    <title>Privacy Policy - LoSpider</title>
     <style>
+        /* Сброс всех системных отступов */
         *, *::before, *::after {
             box-sizing: border-box !important;
             margin: 0;
@@ -12,13 +13,12 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #f4f4f9;
-            color: #2d3748;
-            line-height: 1.65;
+            color: #333;
         }
 
-        /* Шапка LoSpider */
+        /* Шапка */
         header.custom-header {
             background-color: #2c3e50 !important;
             padding: 20px !important;
@@ -27,7 +27,7 @@
         }
 
         .header-container {
-            max-width: 860px !important;
+            max-width: 800px !important;
             margin: 0 auto !important;
             display: flex !important;
             justify-content: space-between !important;
@@ -40,6 +40,7 @@
             padding: 0 !important;
             font-size: 2rem !important;
             color: #ffffff !important;
+            text-transform: none !important;
             font-weight: bold !important;
             line-height: 1 !important;
         }
@@ -49,24 +50,24 @@
             align-items: center !important;
         }
 
-        .nav-link,
+        nav.custom-nav > a,
         .dropdown-trigger {
             color: #ffffff !important;
             text-decoration: none !important;
+            margin-left: 20px !important;
             font-size: 1rem !important;
-            line-height: 1 !important;
-            padding: 10px 12px !important;
+            transition: color 0.3s !important;
             display: inline-block !important;
+            line-height: 1 !important;
             cursor: pointer;
-            transition: color 0.2s !important;
         }
 
-        .nav-link:hover,
+        nav.custom-nav > a:hover,
         .dropdown:hover .dropdown-trigger {
             color: #1abc9c !important;
         }
 
-        /* Выпадающее меню выбора проекта */
+        /* Выпадающее меню политики */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -118,170 +119,162 @@
             display: block;
         }
 
-        /* Контейнер политики */
-        main {
-            display: block;
-            width: 100%;
-        }
-
-        .privacy-container {
-            max-width: 860px;
-            margin: 40px auto;
-            background: #ffffff;
-            padding: 45px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-            border: 1px solid #e2e8f0;
-            position: relative;
-        }
-
-        /* Селектор языка */
-        .lang-switch-container {
+        /* Мобильный контейнер для выбора языка */
+        .lang-selector-container {
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+            padding: 0 30px;
             display: flex;
             justify-content: flex-end;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 25px;
         }
 
-        .lang-switch-container label {
-            font-size: 0.9rem;
-            color: #718096;
-            font-weight: 600;
-        }
-
-        #langSelect {
-            padding: 6px 12px;
-            font-size: 0.95rem;
-            border: 1px solid #cbd5e0;
+        /* Стили выпадающего списка языков */
+        .lang-select {
+            padding: 8px 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+            background-color: #ffffff;
+            border: 2px solid #2c3e50;
             border-radius: 6px;
-            background-color: #fff;
-            color: #2d3748;
             cursor: pointer;
             outline: none;
-            transition: border-color 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
-        #langSelect:focus {
-            border-color: #1abc9c;
+        .lang-select:hover, .lang-select:focus {
+            background-color: #2c3e50;
+            color: #ffffff;
         }
 
-        /* Стили текста политики */
-        .privacy-container h1 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #1a202c;
-            letter-spacing: -0.02em;
+        /* Область контента (белое поле) */
+        main {
+            max-width: 800px;
+            margin: 20px auto 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            line-height: 1.6;
         }
 
-        .privacy-container .last-updated {
-            font-size: 0.9rem;
-            color: #718096;
-            margin-bottom: 25px;
-            display: block;
+        /* Стили элементов текста политики */
+        h1 {
+            font-size: 20pt;
+            color: #111111;
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
-        .privacy-container h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-top: 35px;
+        h2 {
+            font-size: 13pt;
+            color: #1a365d;
+            border-left: 4px solid #2b6cb0;
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 11pt;
+            color: #2d3748;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-top: 0;
             margin-bottom: 12px;
-            color: #2d3748;
-            border-bottom: 1px solid #edf2f7;
-            padding-bottom: 8px;
+            text-align: justify;
         }
-
-        .privacy-container h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-top: 22px;
-            margin-bottom: 8px;
-            color: #2d3748;
+        .subtitle {
+            font-size: 10pt;
+            color: #666666;
+            margin-bottom: 25px;
         }
-
-        .privacy-container p {
-            margin-bottom: 14px;
-            font-size: 0.98rem;
-            color: #4a5568;
-        }
-
-        .privacy-container ul {
-            margin-left: 22px;
-            margin-bottom: 16px;
-        }
-
-        .privacy-container li {
-            margin-bottom: 6px;
-            color: #4a5568;
-            font-size: 0.98rem;
-        }
-
-        /* Оформление цитат и ключевых сносок (In Short / Summary) */
-        .privacy-container blockquote,
-        .privacy-container .in-short,
-        .privacy-container .highlight-box {
+        .short-box {
             background-color: #f7fafc;
-            border-left: 4px solid #1abc9c;
-            padding: 14px 18px;
-            margin: 18px 0;
-            border-radius: 0 6px 6px 0;
-            color: #4a5568;
-            font-size: 0.95rem;
-        }
-
-        .privacy-container strong {
-            color: #1a202c;
-        }
-
-        /* Оформление таблиц с категориями данных */
-        .table-wrapper,
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            margin: 24px 0;
             border: 1px solid #e2e8f0;
-            border-radius: 6px;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-style: italic;
+            font-size: 10pt;
         }
-
-        .privacy-container table {
+        .short-box strong {
+            font-style: normal;
+            color: #2c5282;
+        }
+        ul {
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 9.5pt;
+        }
+        th {
+            background-color: #2b6cb0;
+            color: #ffffff;
+            font-weight: bold;
             text-align: left;
-            font-size: 0.92rem;
+            padding: 8px 10px;
+            border: 1px solid #2b6cb0;
         }
-
-        .privacy-container th {
-            background-color: #edf2f7;
-            color: #2d3748;
-            padding: 12px 14px;
-            border-bottom: 2px solid #cbd5e0;
-            font-weight: 600;
-        }
-
-        .privacy-container td {
-            padding: 12px 14px;
-            border-bottom: 1px solid #e2e8f0;
-            color: #4a5568;
+        td {
+            padding: 8px 10px;
+            border: 1px solid #e2e8f0;
             vertical-align: top;
         }
-
-        .privacy-container tr:nth-child(even) td {
+        tr:nth-child(even) td {
             background-color: #f7fafc;
         }
-
-        .privacy-container tr:last-child td {
-            border-bottom: none;
+        .toc {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
         }
-
-        .privacy-container a {
-            color: #1abc9c;
+        .toc h3 {
+            margin-top: 0;
+            color: #1a365d;
+            border: none;
+            padding-left: 0;
+            text-transform: uppercase;
+            font-size: 11pt;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .toc li {
+            margin-bottom: 8px;
+            font-size: 9.5pt;
+        }
+        .toc a {
+            color: #2b6cb0;
             text-decoration: none;
-            word-break: break-word;
         }
-
-        .privacy-container a:hover {
+        .toc a:hover {
             text-decoration: underline;
+        }
+        .contact-info {
+            background-color: #f7fafc;
+            border-left: 4px solid #4a5568;
+            padding: 12px 15px;
+            margin-top: 15px;
+            font-family: monospace;
+            white-space: pre-line;
         }
 
         /* Адаптивность для мобильных */
@@ -290,25 +283,25 @@
                 flex-direction: column !important;
                 text-align: center !important;
             }
-
             .header-container h1 {
                 margin-bottom: 15px !important;
             }
-
+            nav.custom-nav > a,
+            .dropdown-trigger {
+                margin: 0 10px !important;
+            }
             .dropdown-menu {
                 right: auto;
                 left: 50%;
                 transform: translateX(-50%);
             }
-
-            .privacy-container {
-                margin: 20px 10px;
-                padding: 20px 16px;
+            .lang-selector-container {
+                justify-content: center;
+                padding: 0 10px;
             }
-
-            .lang-switch-container {
-                justify-content: flex-start;
-                margin-bottom: 20px;
+            main {
+                margin: 10px 10px 30px 10px;
+                padding: 20px;
             }
         }
     </style>
@@ -319,7 +312,7 @@
         <div class="header-container">
             <h1>LoSpider</h1>
             <nav class="custom-nav">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html">Home</a>
                 <div class="dropdown">
                     <span class="dropdown-trigger">Privacy Policy ▾</span>
                     <div class="dropdown-menu">
@@ -331,15 +324,14 @@
         </div>
     </header>
 
+    <div class="lang-selector-container">
+        <select id="langSelect" class="lang-select" onchange="switchLang(this.value)">
+            <option value="en">English (EN)</option>
+            <option value="zh">简体中文 (ZH)</option>
+        </select>
+    </div>
+
     <main>
-        <div class="privacy-container">
-            <div class="lang-switch-container">
-                <label for="langSelect">Language:</label>
-                <select id="langSelect" onchange="switchLang(this.value)">
-                    <option value="en">English (EN)</option>
-                    <option value="zh">中文 (ZH)</option>
-                </select>
-            </div>
         
         <div id="privacy-en">
             <h1>PRIVACY POLICY</h1>

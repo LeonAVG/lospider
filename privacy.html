@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - My Puzzle Alarm Clock</title>
     <style>
-        /* Сброс системных отступов */
         *, *::before, *::after {
             box-sizing: border-box !important;
             margin: 0;
@@ -13,10 +12,10 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
+            color: #2d3748;
+            line-height: 1.65;
         }
 
         /* Шапка LoSpider */
@@ -28,7 +27,7 @@
         }
 
         .header-container {
-            max-width: 800px !important;
+            max-width: 860px !important;
             margin: 0 auto !important;
             display: flex !important;
             justify-content: space-between !important;
@@ -67,7 +66,7 @@
             color: #1abc9c !important;
         }
 
-        /* Выпадающее меню политики */
+        /* Выпадающее меню выбора проекта */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -119,92 +118,173 @@
             display: block;
         }
 
-        /* Контейнер для выравнивания */
+        /* Контейнер политики */
         main {
             display: block;
             width: 100%;
         }
 
-        /* Оригинальный белый контейнер документа */
         .privacy-container {
-            max-width: 800px;
+            max-width: 860px;
             margin: 40px auto;
             background: #ffffff;
-            padding: 40px;
+            padding: 45px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            border: 1px solid #e2e8f0;
             position: relative;
         }
 
-        /* Селектор выбора языка */
-        .lang-selector {
-            float: right;
-            margin-bottom: 20px;
+        /* Селектор языка */
+        .lang-switch-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 25px;
         }
 
-        .lang-selector select {
+        .lang-switch-container label {
+            font-size: 0.9rem;
+            color: #718096;
+            font-weight: 600;
+        }
+
+        #langSelect {
             padding: 6px 12px;
             font-size: 0.95rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            background-color: #ffffff;
-            color: #333333;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            background-color: #fff;
+            color: #2d3748;
             cursor: pointer;
             outline: none;
+            transition: border-color 0.2s;
         }
 
-        .lang-selector select:focus {
+        #langSelect:focus {
             border-color: #1abc9c;
         }
 
-        /* Заголовки и текстовые элементы политики */
+        /* Стили текста политики */
         .privacy-container h1 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-            clear: left;
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1a202c;
+            letter-spacing: -0.02em;
+        }
+
+        .privacy-container .last-updated {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 25px;
+            display: block;
         }
 
         .privacy-container h2 {
             font-size: 1.3rem;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            color: #34495e;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 12px;
+            color: #2d3748;
+            border-bottom: 1px solid #edf2f7;
+            padding-bottom: 8px;
         }
 
         .privacy-container h3 {
             font-size: 1.1rem;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            color: #2c3e50;
+            font-weight: 600;
+            margin-top: 22px;
+            margin-bottom: 8px;
+            color: #2d3748;
         }
 
         .privacy-container p {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
+            font-size: 0.98rem;
+            color: #4a5568;
         }
 
         .privacy-container ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-left: 22px;
+            margin-bottom: 16px;
         }
 
         .privacy-container li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+            color: #4a5568;
+            font-size: 0.98rem;
+        }
+
+        /* Оформление цитат и ключевых сносок (In Short / Summary) */
+        .privacy-container blockquote,
+        .privacy-container .in-short,
+        .privacy-container .highlight-box {
+            background-color: #f7fafc;
+            border-left: 4px solid #1abc9c;
+            padding: 14px 18px;
+            margin: 18px 0;
+            border-radius: 0 6px 6px 0;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        .privacy-container strong {
+            color: #1a202c;
+        }
+
+        /* Оформление таблиц с категориями данных */
+        .table-wrapper,
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin: 24px 0;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+
+        .privacy-container table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        .privacy-container th {
+            background-color: #edf2f7;
+            color: #2d3748;
+            padding: 12px 14px;
+            border-bottom: 2px solid #cbd5e0;
+            font-weight: 600;
+        }
+
+        .privacy-container td {
+            padding: 12px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            color: #4a5568;
+            vertical-align: top;
+        }
+
+        .privacy-container tr:nth-child(even) td {
+            background-color: #f7fafc;
+        }
+
+        .privacy-container tr:last-child td {
+            border-bottom: none;
         }
 
         .privacy-container a {
             color: #1abc9c;
             text-decoration: none;
-            word-break: break-all;
+            word-break: break-word;
         }
 
         .privacy-container a:hover {
             text-decoration: underline;
         }
 
-        /* Мобильная адаптивность */
+        /* Адаптивность для мобильных */
         @media (max-width: 600px) {
             .header-container {
                 flex-direction: column !important;
@@ -223,13 +303,12 @@
 
             .privacy-container {
                 margin: 20px 10px;
-                padding: 20px;
+                padding: 20px 16px;
             }
 
-            .lang-selector {
-                float: none;
-                text-align: right;
-                margin-bottom: 15px;
+            .lang-switch-container {
+                justify-content: flex-start;
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -254,10 +333,11 @@
 
     <main>
         <div class="privacy-container">
-            <div class="lang-selector">
+            <div class="lang-switch-container">
+                <label for="langSelect">Language:</label>
                 <select id="langSelect" onchange="switchLang(this.value)">
-                    <option value="en">English</option>
-                    <option value="zh">中文</option>
+                    <option value="en">English (EN)</option>
+                    <option value="zh">中文 (ZH)</option>
                 </select>
             </div>
         

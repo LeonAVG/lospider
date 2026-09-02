@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LoSpider</title>
     <style>
-        /* Сброс всех системных отступов, чтобы ничего не съезжало */
         *, *::before, *::after {
             box-sizing: border-box !important;
             margin: 0;
@@ -18,7 +17,6 @@
             color: #333;
         }
 
-        /* Шапка: строго фиксированная высота за счет паддингов и border-box */
         header.custom-header {
             background-color: #2c3e50 !important;
             padding: 20px !important;
@@ -26,7 +24,6 @@
             width: 100% !important;
         }
 
-        /* Контейнер внутри шапки */
         .header-container {
             max-width: 800px !important;
             margin: 0 auto !important;
@@ -36,7 +33,6 @@
             flex-wrap: wrap !important;
         }
 
-        /* Название проекта */
         .header-container h1 {
             margin: 0 !important;
             padding: 0 !important;
@@ -47,71 +43,77 @@
             line-height: 1 !important;
         }
 
-        /* Навигация */
         nav.custom-nav {
             display: flex !important;
             align-items: center !important;
         }
 
         nav.custom-nav a {
-            color: #ffffff !important;
-            text-decoration: none !important;
-            margin-left: 20px !important;
-            font-size: 1rem !important;
-            transition: color 0.3s !important;
-            display: inline-block !important;
-            line-height: 1 !important;
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1rem;
+            transition: color 0.3s;
+            display: inline-block;
+            line-height: 1;
         }
 
         nav.custom-nav a:hover {
-            color: #1abc9c !important;
+            color: #1abc9c;
         }
 
-        /* Выпадающее меню политики */
+        /* Обертка выпадающего меню */
         .dropdown {
             position: relative;
             display: inline-block;
+            margin-left: 20px;
         }
 
         .dropdown > a {
             cursor: pointer;
+            margin-left: 0 !important;
+            padding-bottom: 10px; /* Чтобы курсор плавно переходил вниз */
         }
 
+        /* Выпадающее окно без пустого зазора */
         .dropdown-menu {
             display: none;
             position: absolute;
             right: 0;
             top: 100%;
-            margin-top: 10px;
-            background-color: #ffffff;
-            min-width: 180px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background-color: #ffffff !important;
+            min-width: 220px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
             border-radius: 6px;
             overflow: hidden;
             z-index: 1000;
+            border: 1px solid #e2e8f0;
         }
 
-        .dropdown-menu a {
-            color: #333333 !important;
+        /* Принудительный темный цвет для ссылок внутри меню */
+        nav.custom-nav .dropdown-menu a {
+            color: #2c3e50 !important;
             padding: 12px 16px !important;
             margin: 0 !important;
             display: block !important;
             text-decoration: none !important;
             font-size: 0.95rem !important;
             line-height: 1.4 !important;
-            text-align: left;
+            text-align: left !important;
+            background-color: #ffffff !important;
+            transition: background 0.2s, color 0.2s !important;
         }
 
-        .dropdown-menu a:hover {
-            background-color: #f4f4f9;
+        nav.custom-nav .dropdown-menu a:hover {
+            background-color: #f1f5f9 !important;
             color: #1abc9c !important;
         }
 
+        /* Показ меню при наведении на весь контейнер или саму ссылку */
         .dropdown:hover .dropdown-menu {
             display: block;
         }
 
-        /* Область контента (белое поле) */
         main {
             max-width: 800px;
             margin: 40px auto;
@@ -122,7 +124,6 @@
             line-height: 1.6;
         }
 
-        /* Адаптивность для мобильных */
         @media (max-width: 600px) {
             .header-container {
                 flex-direction: column !important;
@@ -134,7 +135,11 @@
             }
 
             nav.custom-nav a {
-                margin: 0 10px !important;
+                margin: 0 10px;
+            }
+
+            .dropdown {
+                margin-left: 10px;
             }
 
             .dropdown-menu {
@@ -160,7 +165,7 @@
                 <div class="dropdown">
                     <a href="#">Privacy Policy ▾</a>
                     <div class="dropdown-menu">
-                        <a href="privacy.html">LoSpider App</a>
+                        <a href="privacy.html">My Puzzle Alarm Clock</a>
                         <a href="https://leonavg.github.io/kawaii-rush/privacy.html">Kawaii Rush</a>
                     </div>
                 </div>

@@ -49,7 +49,8 @@
 
         /* Навигация */
         nav.custom-nav {
-            display: block !important;
+            display: flex !important;
+            align-items: center !important;
         }
 
         nav.custom-nav a {
@@ -66,13 +67,57 @@
             color: #1abc9c !important;
         }
 
+        /* Выпадающее меню политики */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown > a {
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 10px;
+            background-color: #ffffff;
+            min-width: 180px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            color: #333333 !important;
+            padding: 12px 16px !important;
+            margin: 0 !important;
+            display: block !important;
+            text-decoration: none !important;
+            font-size: 0.95rem !important;
+            line-height: 1.4 !important;
+            text-align: left;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f9;
+            color: #1abc9c !important;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
         /* Область контента (белое поле) */
         main {
             max-width: 800px;
             margin: 40px auto;
             padding: 30px;
             background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             line-height: 1.6;
         }
@@ -83,12 +128,21 @@
                 flex-direction: column !important;
                 text-align: center !important;
             }
+
             .header-container h1 {
                 margin-bottom: 15px !important;
             }
+
             nav.custom-nav a {
                 margin: 0 10px !important;
             }
+
+            .dropdown-menu {
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
             main {
                 margin: 20px 10px;
                 padding: 20px;
@@ -103,7 +157,13 @@
             <h1>LoSpider</h1>
             <nav class="custom-nav">
                 <a href="index.html">Home</a>
-                <a href="privacy.html">Privacy Policy</a>
+                <div class="dropdown">
+                    <a href="#">Privacy Policy ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="privacy.html">LoSpider App</a>
+                        <a href="https://leonavg.github.io/kawaii-rush/privacy.html">Kawaii Rush</a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
